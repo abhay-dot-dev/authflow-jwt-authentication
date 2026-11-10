@@ -23,6 +23,9 @@ const Signup = () => {
             await registerUser(email, password);
             setEmail('');
             setPassword('');
+            setTimeout(() => {
+                navigate('/login');
+            }, 1000);
         } catch (error) {
             if (error.response?.status === 409) {
                 setError('Account already exists. Redirecting to login...')
@@ -78,7 +81,7 @@ const Signup = () => {
 
                 <button
                     type="submit"
-                    className="w-full rounded-md bg-blue-600 px-4 py-2.5 font-medium text-white transition hover:bg-blue-700 focus:ring-2 focus:ring-blue-300"
+                    className="w-full rounded-md bg-blue-600 px-4 py-2.5 font-medium text-white transition hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 cursor-pointer"
                 >
                     Signup
                 </button>
