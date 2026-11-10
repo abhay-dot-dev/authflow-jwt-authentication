@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://authflow-jwt-authentication.onrender.com';
 
 export const registerUser = async (email, password) => {
     const response = await axios.post(`${API_URL}/register`, {
